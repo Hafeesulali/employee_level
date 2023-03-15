@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="employee_level" model="ir.ui.view">
+            <field name="name">employee.level view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='351']" position="after" >
+                    <button name="button_promote" class="oe_highlight"  string="Promote" type="object" attrs="{'invisible': [('button_visibility', '=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='coach_id']" position="after">
+                        <field name="employee_level_id"/>
+                        <field name="salary"/>
+                        <field name="button_visibility" attrs="{'invisible': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
